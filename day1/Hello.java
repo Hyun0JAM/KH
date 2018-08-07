@@ -1,87 +1,87 @@
-//1ÁÙ ÁÖ¼®
+//1ì¤„ ì£¼ì„
 
-/*¿©·¯ÁÙ ÁÖ¼®*/
+/*ì—¬ëŸ¬ì¤„ ì£¼ì„*/
 
 /**
-    ¹®¼­È­ÁÖ¼®
-    >>javadoc¸¦ ÀÌ¿ëÇØ¼­ api¹®¼­¸¦ ¸¸µé¶§ »ç¿ëÇÑ´Ù. 
+    ë¬¸ì„œí™”ì£¼ì„
+    >>javadocë¥¼ ì´ìš©í•´ì„œ apië¬¸ì„œë¥¼ ë§Œë“¤ë•Œ ì‚¬ìš©í•œë‹¤. 
 */
 
- /* ====== *** classÀÇ ±¸Á¶ *** ======
-    - ¾î¶°ÇÑ ¾îÇÃ¸®ÄÉÀÌ¼Ç Á¦ÀÛ½Ã ÇÊ¿äÇÑ ºÎÇ°ÀÇ ¼³°èµµ¸éÀÌ¶ó°í »ý°¢ÇÏÀÚ.
+ /* ====== *** classì˜ êµ¬ì¡° *** ======
+    - ì–´ë– í•œ ì–´í”Œë¦¬ì¼€ì´ì…˜ ì œìž‘ì‹œ í•„ìš”í•œ ë¶€í’ˆì˜ ì„¤ê³„ë„ë©´ì´ë¼ê³  ìƒê°í•˜ìž.
 
-    1. ÆÐÅ°Áö ¼±¾ð¹® : ÆÐÅ°Áö¶õ Å¬·¡½º°¡ ÀúÀåµÇ¾îÁø µð·ºÅä¸® °æ·Î¶ó°í º¸¸é µÈ´Ù. 
-        ex) package ÆÐÅ°Áö¸í; (ÆÐÅ°Áö¸íÀº ¹Ýµå½Ã ¼Ò¹®ÀÚ·Î ½ÃÀÛ)
-    2. import ¹®  
-        ex) import ÆÐÅ°Áö¸í.Å¬·¡½º¸í;
+    1. íŒ¨í‚¤ì§€ ì„ ì–¸ë¬¸ : íŒ¨í‚¤ì§€ëž€ í´ëž˜ìŠ¤ê°€ ì €ìž¥ë˜ì–´ì§„ ë””ë ‰í† ë¦¬ ê²½ë¡œë¼ê³  ë³´ë©´ ëœë‹¤. 
+        ex) package íŒ¨í‚¤ì§€ëª…; (íŒ¨í‚¤ì§€ëª…ì€ ë°˜ë“œì‹œ ì†Œë¬¸ìžë¡œ ì‹œìž‘)
+    2. import ë¬¸  
+        ex) import íŒ¨í‚¤ì§€ëª….í´ëž˜ìŠ¤ëª…;
             import java.lang.String;
             import java.lang.System;
             import java.lang.*;
-    3. Å¬·¡½º ¼±¾ð¹®
-    4. ÄÄÆÄÀÏ
-    5. ½ÇÇà
+    3. í´ëž˜ìŠ¤ ì„ ì–¸ë¬¸
+    4. ì»´íŒŒì¼
+    5. ì‹¤í–‰
 */
 import java.util.Date;
 import java.lang.*;
 
-public class Hello //Å¬·¡½º¸íÀÇ Ã¹±ÛÀÚ´Â ´ë¹®ÀÚ·Î ÇØ¾ßÇÑ´Ù.
-                   //¶ÇÇÑ ÀúÀå½Ã ÆÄÀÏ¸íµµ class¸í°ú ¶È°°¾Æ¾ßÇÏ¸ç È®ÀåÀÚ´Â '.java'ÀÌ´Ù.
+public class Hello //í´ëž˜ìŠ¤ëª…ì˜ ì²«ê¸€ìžëŠ” ëŒ€ë¬¸ìžë¡œ í•´ì•¼í•œë‹¤.
+                   //ë˜í•œ ì €ìž¥ì‹œ íŒŒì¼ëª…ë„ classëª…ê³¼ ë˜‘ê°™ì•„ì•¼í•˜ë©° í™•ìž¥ìžëŠ” '.java'ì´ë‹¤.
 
-{   //Å¬·¡½ºÀÇ º»Ã¼ class body´Â '{'·Î ½ÃÀÛÇØ¼­ '}'·Î ³¡³­´Ù.
-    //main() ¸Þ¼Òµå : ÄÜ¼Ö ÇÁ·Î±×·¥ÀÇ ½ÃÀÛÁ¡ÀÌÀÚ ³¡Á¡ÀÌ´Ù. java¶ó´Â ¸í·É¾î¸¦ ½ÇÇà½ÃÅ°¸é °¡Àå¸ÕÀú ÇØ´ç main () ¸Þ¼Òµå¸¦ Ã£¾Æ¼­ ½ÇÇà½ÃÅ²´Ù.
+{   //í´ëž˜ìŠ¤ì˜ ë³¸ì²´ class bodyëŠ” '{'ë¡œ ì‹œìž‘í•´ì„œ '}'ë¡œ ëë‚œë‹¤.
+    //main() ë©”ì†Œë“œ : ì½˜ì†” í”„ë¡œê·¸ëž¨ì˜ ì‹œìž‘ì ì´ìž ëì ì´ë‹¤. javaë¼ëŠ” ëª…ë ¹ì–´ë¥¼ ì‹¤í–‰ì‹œí‚¤ë©´ ê°€ìž¥ë¨¼ì € í•´ë‹¹ main () ë©”ì†Œë“œë¥¼ ì°¾ì•„ì„œ ì‹¤í–‰ì‹œí‚¨ë‹¤.
 	public static void main(String[] args){
 		System.out.println("Hello java~~"); 
-		System.out.println("¾È³çÇÏ¼¼¿ä? ¹Ý°©½À´Ï´Ù.");
+		System.out.println("ì•ˆë…•í•˜ì„¸ìš”? ë°˜ê°‘ìŠµë‹ˆë‹¤.");
 		System.out.println("Hi java!!"); 
-		System.out.println("ÀÚ¹Ù¸¦ ¿­½ÉÈ÷ ¹è¿öº¾½Ã´Ù.");
-		//'system.out'Àº ÄÜ¼ÖÈ­¸é(¸ð´ÏÅÍ)¸¦ ¶æÇÑ´Ù.
+		System.out.println("ìžë°”ë¥¼ ì—´ì‹¬ížˆ ë°°ì›Œë´…ì‹œë‹¤.");
+		//'system.out'ì€ ì½˜ì†”í™”ë©´(ëª¨ë‹ˆí„°)ë¥¼ ëœ»í•œë‹¤.
 
-		System.out.print("¿À´ÃÀº ÁÁÀº ³¯ÀÔ´Ï´Ù.");
-		System.out.print("\n¿À´ÃÀº ÁÁÀº ³¯ÀÔ´Ï´Ù.\n");
-		System.out.println("\n ==== Æ¯¼ö¹®ÀÚ ==== \n");
+		System.out.print("ì˜¤ëŠ˜ì€ ì¢‹ì€ ë‚ ìž…ë‹ˆë‹¤.");
+		System.out.print("\nì˜¤ëŠ˜ì€ ì¢‹ì€ ë‚ ìž…ë‹ˆë‹¤.\n");
+		System.out.println("\n ==== íŠ¹ìˆ˜ë¬¸ìž ==== \n");
 		/*
-			Escape ¹®ÀÚ ==> Á¦¾î¹®ÀÚ
-			--- ÀÎ¼â ÇÒ ¼ö ¾ø°Å³ª Å°º¸µå·Î Ç¥ÇöÇÒ ¼ö ¾ø´Â Æ¯º°ÇÑ ¹®ÀÚ¸¦ °¡¸£Å°¸ç
-			¿ª½½·¡½¬(\)¿Í ÇÑ°³ÀÇ ¹®ÀÚ¸¦ °áÇÕÇÏ¿© ÀÛ¼ºÇÑ´Ù.
+			Escape ë¬¸ìž ==> ì œì–´ë¬¸ìž
+			--- ì¸ì‡„ í•  ìˆ˜ ì—†ê±°ë‚˜ í‚¤ë³´ë“œë¡œ í‘œí˜„í•  ìˆ˜ ì—†ëŠ” íŠ¹ë³„í•œ ë¬¸ìžë¥¼ ê°€ë¥´í‚¤ë©°
+			ì—­ìŠ¬ëž˜ì‰¬(\)ì™€ í•œê°œì˜ ë¬¸ìžë¥¼ ê²°í•©í•˜ì—¬ ìž‘ì„±í•œë‹¤.
 
-			\n : °³Çà(ÁÙ¹Ù²Þ). ½ºÅ©¸°(È­¸é) Ä¿¼­ÀÇ À§Ä¡¸¦ ´ÙÀ½ÁÙÀÇ Ã³À½À¸·Î ¿Å±ä´Ù.
-			\t : ¼öÆòÅÇ. ½ºÅ©¸°(È­¸é) Ä¿¼­¸¦ ´ÙÀ½ ÅÇÀ¸·Î ¿Å±ä´Ù.
-			\r : Ä³¸®Áö ¸®ÅÏ. ½ºÅ©¸°(È­¸é) Ä¿¼­ÀÇ À§Ä¡¸¦ ÇöÀç ÁÙÀÇ Ã³À½À¸·Î ¿Å±ä´Ù. 
-				(°³ÇàÇÏÁö ¾Ê°í ÀÌ ±âÈ£ ´ÙÀ½¿¡ ¿À´Â ¹®ÀÚ¸¦ µ¤¾î ¾º¿î´Ù.)
-			\\ : ¿ª½½·¡½¬¸¦ Ãâ·Â ÇÒ ¶§ »ç¿ëÇÑ´Ù.
-			\" : Å« µû¿ÈÇ¥¸¦ Ãâ·Â ÇÒ ¶§ »ç¿ëÇÑ´Ù.
+			\n : ê°œí–‰(ì¤„ë°”ê¿ˆ). ìŠ¤í¬ë¦°(í™”ë©´) ì»¤ì„œì˜ ìœ„ì¹˜ë¥¼ ë‹¤ìŒì¤„ì˜ ì²˜ìŒìœ¼ë¡œ ì˜®ê¸´ë‹¤.
+			\t : ìˆ˜í‰íƒ­. ìŠ¤í¬ë¦°(í™”ë©´) ì»¤ì„œë¥¼ ë‹¤ìŒ íƒ­ìœ¼ë¡œ ì˜®ê¸´ë‹¤.
+			\r : ìºë¦¬ì§€ ë¦¬í„´. ìŠ¤í¬ë¦°(í™”ë©´) ì»¤ì„œì˜ ìœ„ì¹˜ë¥¼ í˜„ìž¬ ì¤„ì˜ ì²˜ìŒìœ¼ë¡œ ì˜®ê¸´ë‹¤. 
+				(ê°œí–‰í•˜ì§€ ì•Šê³  ì´ ê¸°í˜¸ ë‹¤ìŒì— ì˜¤ëŠ” ë¬¸ìžë¥¼ ë®ì–´ ì”Œìš´ë‹¤.)
+			\\ : ì—­ìŠ¬ëž˜ì‰¬ë¥¼ ì¶œë ¥ í•  ë•Œ ì‚¬ìš©í•œë‹¤.
+			\" : í° ë”°ì˜´í‘œë¥¼ ì¶œë ¥ í•  ë•Œ ì‚¬ìš©í•œë‹¤.
 		*/
-		System.out.println("±¹¾î\t¿µ¾î\t¼öÇÐ");
+		System.out.println("êµ­ì–´\tì˜ì–´\tìˆ˜í•™");
 		System.out.println("99\t88\t77");
 
 		System.out.println("");
-		System.out.println("ÀÌ¹ø¿£ Ä³¸®Áö ¸®ÅÏÀ» ½áº¼±î¿ä? \rµÎ");
-		System.out.println("ÀÌ¹ø¿£ Ä³¸®Áö ¸®ÅÏÀ» ½áº¼±î¿ä? \rA");
+		System.out.println("ì´ë²ˆì—” ìºë¦¬ì§€ ë¦¬í„´ì„ ì¨ë³¼ê¹Œìš”? \rë‘");
+		System.out.println("ì´ë²ˆì—” ìºë¦¬ì§€ ë¦¬í„´ì„ ì¨ë³¼ê¹Œìš”? \rA");
 
 		System.out.println("");
 		System.out.println("\"c:\\myjava\\day\\Hello.java\"");
-		System.out.println(" === ÄûÁî === ");
+		System.out.println(" === í€´ì¦ˆ === ");
 		/*
-			±è¼Ò¿ù ´ÔÀÇ 'Áø´Þ·¡'
-			³ªº¸±â°¡ "¿ª°Ü¿ö °¡½Ç¶§"¿¡´Â
-			c:\Áø´Þ·¡.hwp
+			ê¹€ì†Œì›” ë‹˜ì˜ 'ì§„ë‹¬ëž˜'
+			ë‚˜ë³´ê¸°ê°€ "ì—­ê²¨ì›Œ ê°€ì‹¤ë•Œ"ì—ëŠ”
+			c:\ì§„ë‹¬ëž˜.hwp
 		*/
-		System.out.println("±è¼Ò¿ù ´ÔÀÇ \'Áø´Þ·¡\'");
-		System.out.println("³ªº¸±â°¡ \"¿ª°Ü¿ö °¡½Ç¶§\"¿¡´Â");
-		System.out.println("c:\\Áø´Þ·¡.hwp");
+		System.out.println("ê¹€ì†Œì›” ë‹˜ì˜ \'ì§„ë‹¬ëž˜\'");
+		System.out.println("ë‚˜ë³´ê¸°ê°€ \"ì—­ê²¨ì›Œ ê°€ì‹¤ë•Œ\"ì—ëŠ”");
+		System.out.println("c:\\ì§„ë‹¬ëž˜.hwp");
 
 		/*
-			¡Ø ÀÚ¹Ù ÄÄÆÄÀÏ·¯ : javac.exe ÀÚ¹Ù¼Ò½ºÄÚµå¸¦ ¹ÙÀÌÆ®ÄÚµå·Î ÄÄÆÄÀÏÇÑ´Ù.
-							 ½ÇÇàÇÏ¸é .classÆÄÀÏÀÌ »ý¼ºµÈ´Ù.
+			â€» ìžë°” ì»´íŒŒì¼ëŸ¬ : javac.exe ìžë°”ì†ŒìŠ¤ì½”ë“œë¥¼ ë°”ì´íŠ¸ì½”ë“œë¡œ ì»´íŒŒì¼í•œë‹¤.
+							 ì‹¤í–‰í•˜ë©´ .classíŒŒì¼ì´ ìƒì„±ëœë‹¤.
 			   ex) javac Hello.java
 
-			¡Ø ÀÚ¹Ù ÀÎÅÍÇÁ¸®ÅÍ : java.exe ÄÄÆÄÀÏ·¯°¡ »ý¼ºÇÏ´Â ¹ÙÀÌÆ®ÄÚµå¸¦ ÇØ¼®ÇÏ°í ½ÇÇàÇÑ´Ù.
-			¡Ø ¹ÙÀÌÆ® ÄÚµå : JVM(Java Virtual Machine)ÀÌ ÀÌÇØ ÇÒ ¼ö ÀÖ´Â ±â°è¾î.
-						   ÀÚ¹Ù°¡»ó¸Ó½ÅÀº ¹ÙÀÌÆ®ÄÚµå¸¦ ´Ù½Ã ÇØ´ç ¿î¿µÃ¼Á¦(OS)ÀÇ ±â°è¾î·Î º¯È¯ÇÏ¿© ¿î¿µÃ¼Á¦·Î Àü´ÞÇÑ´Ù.
+			â€» ìžë°” ì¸í„°í”„ë¦¬í„° : java.exe ì»´íŒŒì¼ëŸ¬ê°€ ìƒì„±í•˜ëŠ” ë°”ì´íŠ¸ì½”ë“œë¥¼ í•´ì„í•˜ê³  ì‹¤í–‰í•œë‹¤.
+			â€» ë°”ì´íŠ¸ ì½”ë“œ : JVM(Java Virtual Machine)ì´ ì´í•´ í•  ìˆ˜ ìžˆëŠ” ê¸°ê³„ì–´.
+						   ìžë°”ê°€ìƒë¨¸ì‹ ì€ ë°”ì´íŠ¸ì½”ë“œë¥¼ ë‹¤ì‹œ í•´ë‹¹ ìš´ì˜ì²´ì œ(OS)ì˜ ê¸°ê³„ì–´ë¡œ ë³€í™˜í•˜ì—¬ ìš´ì˜ì²´ì œë¡œ ì „ë‹¬í•œë‹¤.
 		*/
 
-		System.out.println("\n=== ¿À´ÃÀÇ ³¯Â¥ ===\n");
+		System.out.println("\n=== ì˜¤ëŠ˜ì˜ ë‚ ì§œ ===\n");
 		System.out.println(new Date());
-		//new date()Àº ½Ã½ºÅÛ(ÄÄÇ»ÅÍ)ÀÇ ³¯Â¥¸¦ ¾Ë·ÁÁÖ´Â °ÍÀÌ´Ù.
+		//new date()ì€ ì‹œìŠ¤í…œ(ì»´í“¨í„°)ì˜ ë‚ ì§œë¥¼ ì•Œë ¤ì£¼ëŠ” ê²ƒì´ë‹¤.
 	}
 }
