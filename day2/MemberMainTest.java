@@ -12,5 +12,9 @@ public class MemberMainTest
 		me.adress="강북구 수유동";
 		
 		me.showInfo();
+
+		Member1 you = new Member1("irin","asdf1234","아이린",22,"서울시 강남구"); 
+		// 괄호속 값을 인자(parameter)라고 한다.
+		
 	}
 }
