@@ -1,8 +1,0 @@
-20180807)
-
-2진수(binary digit) - bit(0,1)
-
-ASKII코드
-
-
-
