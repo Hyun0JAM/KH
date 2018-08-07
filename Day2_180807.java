@@ -25,7 +25,10 @@
 		해당 프로그램이 종료되면 클래스변수와 인스턴스변수는 더이상 쓸모없는 쓰래기가 되므로 
 		자바가상머신의 garbege collecter가 작동하여 자동적으로 메모리에서 소멸시켜준다
 
-		지역변수(Local 변수)
+	2. 지역변수(Local 변수) : 사용되어지는 범위는 지역변수가 생성된 '{ ... }'내에서만 사용가능하다.
+		지역변수는 선언되어진 괄호안을 벗어나면 자동적으로 소멸한다.
+		지연변수는 특정 메소드에서나 생성자(instructor)내에서 선언되어지는 것이다.
+		지역변수는 반드시 초기화 해주어야만 한다.
 */
 //import java.lang.*;
 
@@ -34,7 +37,7 @@ public class Day2
 	int a=10; //여기서 '='는 같다가 아니라 어떤 값을 대입한다는 뜻이다.(대입연산자)/명시적초기화
 	int b;
 	static int c;
-	String adress ;
+	String adress;
 	String name;
 	String userid;
 	String password;
@@ -53,7 +56,7 @@ public class Day2
 
 		System.out.println("name : " + myobj.name);
 
-		System.out.println("------------------------------------");
+		System.out.println("-----------------멤버변수---------------");
 
 		Day2 me= new Day2();
 		Day2 you= new Day2();
@@ -82,7 +85,7 @@ public class Day2
 		System.out.println("c : " +Day2.c);  //권장
 
 		//System.out.println("adress : " +adress);
-		System.out.println("adress : " +Day2.adress); //권장
+		//System.out.println("adress : " +Day2.adress); //권장
 
 		me.password="1234";
 
@@ -96,6 +99,16 @@ public class Day2
 		System.out.println("ID : " + you.userid);
 		System.out.println("PW : " + you.password);
 		System.out.println("PW : " + you.adress);
+
+		System.out.println(" -----------------지역변수---------------");
+
+		int d;
+		d = 0;
+
+		int e=0;
+
+		System.out.println("d : " + d); //반드시 초기화를 해주어야 한다.
+		System.out.println("e : " + e); 
 
 
 	}
