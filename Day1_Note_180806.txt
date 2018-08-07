@@ -1,0 +1,19 @@
+20180806)서영학강사님 - OT진행과 자바의 기본
+
+자바설치(+환경변수설정)
+
+ < 자바기본 >
+  
+   - 데이터 타입(ex.아이디 = 문자열String, 날짜 = Date, 숫자 = int 등 ...)
+
+   - Class : 자바의 설계도면(객체를 만드는 틀) >> 인스턴스화(객체화) >> Object(만들어진 객체)
+
+   - Instance 변수(Non Static 변수) : 객체의 변수  
+
+   - Class변수(Static변수) : 클래스 내에서 사용하는 변수
+
+   [day1/Hello.java 예제]
+
+	- javac : 자바 컴파일 (클래스파일 생성됨)
+	    ex) javac Hello.java - 컴파일
+	        java Hello - 실행 
