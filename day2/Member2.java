@@ -4,7 +4,7 @@ public class Member2{
 	String name;//성명 (문자열)
 	int age;//나이 (정수형)
   String adress;//주소 (문자열)
-    
+
 		public Member2(){}; //기본생성자 생략
 		/*
 			기본생성자는 파라미터가 있는 생성자가 없을 경우 자동으로 등록되어지지만
