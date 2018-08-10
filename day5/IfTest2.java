@@ -29,7 +29,6 @@ public class IfTest2 {
 								 //return Type = int
 		
 		IfTest2 obj = new IfTest2();
-		
 		obj.showInfo(n);		
 
 		sc.close();
