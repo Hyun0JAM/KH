@@ -119,6 +119,55 @@ public class BreakContinueTest {
 				continue; }
 		System.out.println("\n* 3의 배수의 합은 ? "+sum3+"\n\n* 5의배수의 합은? "+sum5);
 		
+		System.out.println("\n--------------\n");
+		//1+2+3+4+5+6+7+8+9+10=55
+		sum=0;
+		for(int i=1;i<=10;i++) {
+			sum+=i;
+			System.out.print(i);
+			if(i==10) continue;
+			System.out.print("+");}
+		System.out.print(" = "+sum+"\n\n");
+		
+		//1+3+5+7+9=25
+		sum=0;
+		for(int i=1;i<=10;i+=2)	{
+			sum+=i;
+			System.out.print(i);
+			if(i==9) continue;
+			System.out.print("+");}
+		System.out.print(" = "+sum+"\n\n");
+		
+		//2+4+6+8+10=30
+		sum=0;
+		for(int i=2;i<=10;i++) {
+			if(i%2!=0) continue;
+			sum+=i;
+			System.out.print(i);
+			if(i==10) continue;
+			System.out.print("+");}
+		System.out.print(" = "+sum+"\n\n");
+		
+		////1+2+3+4+6+8+9+10=43
+		sum=0;
+		for(int i=1;i<=10;i++) {
+			if(i==5||i==7) continue;
+			sum+=i;
+			System.out.print(i);
+			if(i==10) continue;
+			System.out.print("+");
+			}
+		System.out.print(" = "+sum+"\n\n");
+		
+		//다른예시
+		sum=0;
+		for(int i=1;i<=10;i++) {
+			String str = (i<10)?"+":"=";
+			if(i==5||i==7) continue;
+			sum+=i;
+			System.out.print(i+str);}
+		System.out.print(sum+"\n\n");
+		
 	}
 
 }
