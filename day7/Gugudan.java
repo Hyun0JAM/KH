@@ -46,7 +46,7 @@ public class Gugudan {
 				break;
 			} catch (NumberFormatException e) {
 				System.out.println("\n* 숫자(정수)만 입력해 주세요!!\n");
-				//continue;
+				//continue; _하던 안하던 똑같다 for문이 돌고있기 때문에
 			}
 		}//end of for--------------------------
 		System.out.println("\n------------------------- 누적치 합구하기 -------------------------\n");
