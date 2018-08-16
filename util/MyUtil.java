@@ -1,6 +1,7 @@
 package my.util;
 
 import java.util.Date;
+import java.util.Random;
 
 public class MyUtil {
 	public static void currentTime() {
@@ -15,5 +16,9 @@ public class MyUtil {
 	}
 	public static int random(int a,int b){
 		return (int)(Math.random()*(b-a+1)+a);
+	}
+	public static int random2(int a,int b){
+		Random rnd = new Random();
+		return rnd.nextInt(b-a+1)+a;
 	}
 }
