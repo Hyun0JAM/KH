@@ -44,7 +44,21 @@ public class ArrayCopy {
 			System.out.print(newfArr[i]+str);
 		}
 		System.out.println("======================================");
+		/*System.arraycopy(src, srcPos, dest, destPos, length); 
+		
+		배열 src의 내용을 새배열 dest 로 복사하는데, 
+		복사할 내용은 배열 src의 인덱스 srcPos의 위치부터 시작해서 
+		length 만큼을 새배열 dest 의 인덱스 destPos인 위치에 복사한다. 
+	    이때 복사되어지는 새배열(dest)의 위치가 적절하지 못하여 
+	    복사하려는 내용(src)보다 여유공간이 적으면 
+	    ArrayIndexOutOfBoundsException이 발생한다. */
 		String[] friendArr2 = {"박민규","수학의정석 기본","수학의정석 실력"};
+		String[] newfriendArr2 = new String[5];
+		
+		System.arraycopy(friendArr2, 0, newfriendArr2, 0, friendArr.length);
+		for(int i=0;i<newfriendArr2.length;i++) {
+			String str = (i<newfriendArr2.length-1)?"\t":"\n";
+			System.out.print(newfriendArr2[i]+str);
+		}	
 	}
-
 }
