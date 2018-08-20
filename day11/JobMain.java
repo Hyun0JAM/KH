@@ -7,9 +7,8 @@ import my.util.MyUtil;
 class JobMain {
 	//구직자 객체를 저장 시키는 배열
 	JobSeeker[] seekerArr = new JobSeeker[10];
-	JobSeeker seeker = new JobSeeker();
-	boolean loginflag = false;
-	String logid;
+	boolean loginflag = false; //로그인된 상태인지 저장해두는 플래그
+	String logid; //로그인시 로그인 된 아이디를 저장하는 변수
 	
 	//메뉴를 보여주는 메소드
 	public static void menu() {
@@ -18,20 +17,13 @@ class JobMain {
 		System.out.println("2. 구인회사 등록");
 		System.out.println("3. 로그인(구직자)");
 		System.out.println("4. 로그인(구인회사)");
-		System.out.println("5. 구직자 정보보기");
+		System.out.println("5. 나의 정보조회");
 		System.out.println("15. 종료");
 		System.out.println("================================");
 		System.out.print(">> 메뉴 번호 선택 : ");
 	}//end of menu---------------------
 	//구직자 등록(생성)해주는 기능
-	
-	public boolean idCheck(String id) {
-		for(int i=0;i<seeker.cnt-1;i++) {
-			if((seekerArr[i].userid).equals(id))
-				return true;
-		}
-		return false;
-	}
+
 	public void registJobSeeker(Scanner scan) {
 		String userid="";
 		String pw="";
@@ -167,26 +159,36 @@ class JobMain {
 		} while (true);
 		
 		//구직자 생성
-		seekerArr[seeker.cnt-1] = new JobSeeker(userid,pw,name,birth,gender,adress,school,mobile,hopejob,hopemoney);
+		seekerArr[JobSeeker.cnt-1] = new JobSeeker(userid,pw,name,birth,gender,adress,school,mobile,hopejob,hopemoney);
 		System.out.println("--------------------------------");
-		System.out.println("* "+(seeker.cnt-1)+"번쨰로 구직 등록이 완료되었습니다!!");
+		System.out.println("* "+(JobSeeker.cnt-1)+"번쨰로 구직 등록이 완료되었습니다!!");
 	} //end of registJobSeeker(Scanner scan)-------------------
 	
-	public boolean applogin(String userid,String pw) {
-		for(int i=0;i<seeker.cnt-1;i++) {
+	// 입력한 아이디와 비밀번호가 같을 시 로그인 성공 여부를 반환하는 클래스
+	public boolean applogin(String userid,String pw) { //userid와 password 를 입력받고 배열중 해당 아이디와 비밀번호가 일치하는 객체가있는지 반환받는다.
+		for(int i=0;i<JobSeeker.cnt-1;i++) {
 			if(seekerArr[i].login(userid,pw)) return true;
 		}
 		return false;
 	}
+	
+	//로그인 된 구직자의 정보를 보여주는 클래스
 	public void showInfo(String userid) {
-		for(int i=0;i<seeker.cnt-1;i++) {
+		for(int i=0;i<JobSeeker.cnt-1;i++) { //배열에 저장된 구직자 정보중 현재 로그인된 아이디와 같은 객체를 찾고 정보를 반환
 			if((seekerArr[i].userid).equals(userid)) {
 				String info=seekerArr[i].getInfo();
-				System.out.println(info);
+				System.out.println(info); //반환된 정보 출력
 			}
 		}
 	}
-	public static void main(String[] args) {
+	//아이디 중복여부를 반환 해주는 클래스
+	public boolean idCheck(String id) {
+		for(int i=0;i<JobSeeker.cnt-1;i++) { //배열안에 이미있는 아이디라면 true를 반환.
+			if((seekerArr[i].userid).equals(id)) return true;
+		}return false;
+	}
+	//메인 메소드
+	public static void main(String[] args) { 
 		Scanner scan = new Scanner(System.in);
 		JobMain jobapp = new JobMain();
 		
@@ -201,9 +203,9 @@ class JobMain {
 				jobapp.registJobSeeker(scan); //스캐너를 넘겨줄수 있다.
 				//seekerArr[cnt-1].getInfo();
 				break;
-			case "2": 
+			case "2": //구인회사 로그인
 				break;
-			case "3": 
+			case "3": // 구직자 로그인
 				System.out.print("* ID : ");
 				String userid = scan.nextLine();
 				System.out.print("* PW : ");
@@ -215,9 +217,9 @@ class JobMain {
 				}
 				else System.out.println("로그인 실패");
 				break;
-			case "4": 
+			case "4": //구인회사 로그인
 				break;
-			case "5":
+			case "5": //로그인 했다면 나의정보보기
 				if(!jobapp.loginflag) {
 					System.out.println("* 로그인이 필요합니다.");
 					continue;
@@ -225,12 +227,12 @@ class JobMain {
 				System.out.println("--------------------------------");
 				jobapp.showInfo(jobapp.logid);
 				break;
-			case "15":
+			case "15": //종료
 				break;
 			default: 
 				break;
 			}//end of switch -------------------------
-		} while (!"15".equals(select));
+		} while (!"15".equals(select)); //15입력시 종료
 		System.out.println("========= 프로그램 종료!! ==========");
 		scan.close();
 	}
