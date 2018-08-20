@@ -11,13 +11,13 @@ public class StringTest {
 		System.out.println("\n===1. char 문자열.cahrAt(int index) ");
 		//char 문자열.charAt(int index)
 		//-->인덱스 위치에 있는 문자(char)를 반환시켜주는 메소드
-		for(int i=0;i<str.length();i++) System.out.println(str.charAt(i));
+		for(int i=0;i<str.length();i++) System.out.print(str.charAt(i)+", ");
 		
 		
 		System.out.println("\n===2. char[] 문자열.tochararray() ");
 		//char[] 문자열.tochararray() --> 문자열을 char배열 타입으로 반환해준다.
 		char[] charArr = str.toCharArray();
-		for(int i=0;i<charArr.length;i++) System.out.println(charArr[i]);
+		for(int i=0;i<charArr.length;i++) System.out.print(charArr[i]+", ");
 		
 		
 		System.out.println("\n===3. String 문자열.subString(int beginIndex,int endIndex) ");
