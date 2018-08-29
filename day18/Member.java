@@ -30,5 +30,10 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	public String toString() {
+		return "\n1. ID : "+id+"\n2. PW : "+pw+"\n3. Name : "+name;
+	}
+	public void showInfo() {
+		System.out.println("\n1. ID   : "+id+"\n2. PW   : "+pw+"\n3. Name : "+name);
+	}
 }
