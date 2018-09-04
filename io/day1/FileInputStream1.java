@@ -19,7 +19,6 @@
                      print(String str),
                      write(int b)                  
  */
-
 package io.day1;
 
 import java.io.FileInputStream;
@@ -29,54 +28,27 @@ import java.util.Scanner;
 
 public class FileInputStream1 {
 
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.print("읽을 파일의 이름(절대경로)을 입력 => ");
-		
-		String filename = sc.nextLine();
-		// 파일명 입력 --> 데이터소스가 된다.
-		// C:\iotestdata\korea.txt 
-		
+	public static void main(String[] args) throws IOException {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("읽을 파일의 이름(절대경로)을 입력 : ");
+		String filename = scan.nextLine(); // 파일명 입력 >> 데이터 소스 (C:\IOTestData\io.txt)
 		int input = 0;
-		int totalByte = 0;
-		
+		int totalbyte =0 ;
 		try {
-			FileInputStream fist = new FileInputStream(filename);
-			
-			while( (input = fist.read()) != -1 ) {
-				/*
-				    fist.read() 메소드는 해당 파일에서 
-				    데이터를 1byte 씩 읽어서 int 타입으로 리턴해준다.
-				    만약에 파일의 내용물에서 읽어들일 데이터가 없다라면
-				    -1 을 리턴시켜준다.
-				    즉, 파일속의 내용물이 끝이 아니라면 계속해서 while{}을
-				    실행해라는 말이다.
-				 */
-				
-				 System.out.write(input); // 모니터(콘솔화면)에 출력
-				 System.out.flush();
-				 
-				 totalByte++;
-			}// end of while------------------------
-			
-			fist.close(); 
-			
+			FileInputStream file = new FileInputStream(filename);
+			while((input = file.read())!=-1) {
+				//file.read(); 메소드는 해당 파일에서 1byte씩 읽어서 int 타입으로 리턴해준다.
+				//만약에 파일의 내용물에서 더이상 읽어들일 데이터가 없다 라면 -1을 리턴시켜준다.
+				System.out.write(input);
+				System.out.flush();
+				totalbyte++;
+			}//end of while-------------------
+			System.out.println("\n읽어들인 바이트 수 : "+totalbyte);
+			file.close();
 		} catch (FileNotFoundException e) {
-			System.out.println(filename + " 파일은 없습니다.");
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+		
 		}
-		
-		System.out.println("\n=========================");
-		System.out.println("총 " + totalByte + " bytes"); 
-		System.out.println("===========================");
-		
-		sc.close();
-		
-	}// end of main()-----------------------
-
+	}
 }

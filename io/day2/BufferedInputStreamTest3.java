@@ -1,98 +1,95 @@
 package io.day2;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class BufferedInputStreamTest3 {
 
 	public static void main(String[] args) {
 		
-		// 원본파일크기 620,888 byte
-		// ################################################## 
-		// ##################################################
-		// ################################################## 
-		// ##################################################
-		// ################################################## 
-		// ##################################################
-		// ################################################## 
-		// ##################################################
-		// ################################################## 
-		// ##################################################
-		// ################################################## 
-		// ##################################################
-		// ######
-        // # 1개를 1024 byte 로 본다. 
-		
-		Scanner sc = new Scanner(System.in);
-		
 		try {
-			System.out.print("복사할 원본파일명(절대경로) 입력 => "); 
+			Scanner sc = new Scanner (System.in);
+			
+			System.out.print("복사할 파일 명 : ");
 			String srcFilename = sc.nextLine();
+			File srcFile = new File(srcFilename);//입력노드 스트링
+			long srcFileSize = srcFile.length();//소스파일 크기,원본파일 크기
 			
-			System.out.print("목적 파일명(절대경로) 입력 => "); 
+			//입력 노드 스트림 : FileInputStream
+			FileInputStream fist  = new FileInputStream(srcFile);
+			
+			//입력 노드 스트림에 보조(필터)스트림(BufferedIputStream)을 장착한다.
+			BufferedInputStream bist = new BufferedInputStream(fist,10240);//오리발 장착
+			//노드 스트림인 System.in(키보드)에 필터 스트림(보조스트림)을 장착함.
+			//필터 스트림(보조스트림)의 용량은 10240byte 가 된다.
+			
+			
+			//출력 노드 스트림 :파일 FileInputStream
+			System.out.print("생성 할 파일 명 : ");
 			String targetFilename = sc.nextLine();
+			File targeFile = new File(targetFilename);//
+			System.out.println("");
+			//출력 노드 스트림 :파일 FileOutputStream
+			FileOutputStream fost = new FileOutputStream(targeFile);
 			
-			File srcFile = new File(srcFilename);
-		//	long srcFileSize = srcFile.length(); // 원본파일의 크기 
-			
-			// 입력노드스트림 ==> 파일 FileInputStream
-			FileInputStream fist = new FileInputStream(srcFile);
-			
-			// 입력노드스트림에 보조(필터)스트림(BufferedInputStream)을 장착한다.
-			BufferedInputStream bist = new BufferedInputStream(fist, 10240); 
-			// 노드스트림인 System.in(키보드)에 필터스트림(보조스트림)을 장착함.
-			// 필터스트림(보조스트림)의 용량은 10240 byte 가 된다.
-			
-			File targetFile = new File(targetFilename);
-			
-			// 출력노드스트림 ==> 파일 FileOutStream
-			FileOutputStream fost = new FileOutputStream(targetFile);
-			
-			// 출력노드스트림에 보조(필터)스트림(BufferedOutputStream)을 장착한다.
-			BufferedOutputStream bost = new BufferedOutputStream(fost, 10240); 
-			// 노드스트림인 fost(파일)에 필터스트림(보조스트림)을 장착함.
-			// 필터스트림(보조스트림)의 용량은 10240 byte 가 된다.
+			//출력 노드 스트림에 보조(필터)스트림(BufferedIputStream)을 장착한다.
+			BufferedOutputStream bost = new BufferedOutputStream(fost,10240);//높일수록 속도가 빠름
+			//노드 스트림인 System.out(파일)에 필터 스트림(보조스트림)을 장착함.
+			//필터 스트림(보조스트림)의 용량은 10240byte 가 된다.
 			
 			byte[] dataArr = new byte[1024];
-			
-			int inputLength = 0;
-			int totalByte = 0;
-			
+			int inputLength =0;
+			int totalbyte = 0;
 			int sharpCount = 0;
-			while( (inputLength = bist.read(dataArr) ) != -1 ) {
-				
-				bost.write(dataArr, 0, inputLength);
+			while((inputLength = bist.read(dataArr)) != -1) {
+				bost.write(dataArr,0,inputLength);//배열의 저장되어진 데이터를 처음부터 쓴다.
 				bost.flush();
-				
-				totalByte += inputLength;
-				
-				if(inputLength == 1024) {
+
+				totalbyte +=inputLength;
+				if(inputLength== 1024) {
 					System.out.print("#");
-					sharpCount++; 
+					sharpCount++;
 				}
+				if(sharpCount % 50 ==0) System.out.println("");
 				
-				if(sharpCount%50 == 0)
-					System.out.print("\n");
-			}// end of while------------------------------
-			
-			System.out.println("\n------------------------------------------------------"); 
-			System.out.println("총 " + totalByte + "bytes 읽고 " + targetFilename + " 파일에 씀"); 
-			System.out.println("------------------------------------------------------");
+			}
+			/*System.out.println("===============================");
+			System.out.println("원본 파일 크기 : "+totalbyte);
+			for(int i=1;i<=totalbyte/1024;i++) {
+				System.out.print("#");
+				if(i !=0 && i % 50 == 0) System.out.println("");
+			}
+		//	System.out.println(totalbyte/1024);
+			System.out.println("");
+			System.out.println("===============================");*/
 			
 			bost.close();
 			fost.close();
-						
-			bist.close();
-			fist.close();
-		
-		} catch(FileNotFoundException e) {
-			System.out.println(">> 파일의 경로명이 올바르지 않습니다.");
+					
+			bist.close();//오리발 제거으
+			fist.close();//자원 해제
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("파일의 경로가 올바르지 않습니다.");
 			e.printStackTrace();
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
 		
-		sc.close();
-	}// end of main()----------------------------
+	
+		
+	
+	
+		
+	
+		// TODO Auto-generated method stub
+
+	}
 
 }

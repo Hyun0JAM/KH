@@ -29,35 +29,24 @@
                      print(String str),
                      write(int b)             
  */
-
 package io.day1;
 
 import java.io.IOException;
 
 public class InputStreamTest1 {
 
-	public static void main(String[] args) 
-		throws IOException {
-		
-		int input = 0;
-		int totalByte = 0;
-		
+	public static void main(String[] args) throws IOException {
+		byte totalbyte = 0;
+		int input =0;
 		while(true) {
-		
-			input = System.in.read(); // a엔터
-			// 키보드에서 입력한 글자중 첫글자 1개만 입력받아 int 타입으로 반환해준다. 
-			
-			if(input != 13 && input != 10) {
-				if((char)input == 'x' || (char)input == 'X')
-					break;
-				
-				totalByte++;
-				System.out.println("input : " + (char)input);
+			input = System.in.read();	//키보드에서 입력한 글자중 첫글자 1개만 입력받아 int타입으로 반환
+			totalbyte ++;
+			if(input!=13&&input!=10) {
+				if((char)input=='x'||(char)input=='X') break;
+					totalbyte++;
+					System.out.println("input : "+(char)input);		
 			}
-			 
-		}// end of while---------------------
-		
-		System.out.println("입력받은 byte 수 : " + totalByte +"byte"); 
+		}
+		System.out.println("* 입력받은 바이트 수 : "+totalbyte);
 	}
-
 }
